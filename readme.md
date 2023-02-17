@@ -18,7 +18,7 @@
 
 ### ¿Cómo funciona?
 
-> **Descripción**
+> **Descripción** (VER IMAGEN ANEXA AL FINAL DEL DOCUMENTO) 
 
 - A través del servicio podemos obtener información de mercado de criptoactivos, teniendo como fuente de datos a Bitfinex. Solo se trabajó sobre endpoints públicos provistos por el exchange. Se podrá conectar a cualquier criptodivisa y obtener información real time (websocket) de velas de precios, order book y tikers (Sobre lo cual fue testeado).
 - A través del mismo puerto conectamos tanto con servicios websocket como realizar peticiones http. Podemos distinguir dos tipos de rutas: Públicas y Protegidas:
