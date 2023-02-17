@@ -1,0 +1,33 @@
+{
+	"id": "7d60664b-0719-481e-aa8f-fa65c9b92623",
+	"name": "ratherlabs",
+	"values": [
+		{
+			"key": "baseUrlLocal",
+			"value": "http://localhost:4000/api",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIzMDAxNDM5OS1jY2FhLTQxMGQtYjkzYi0yNjJlNWRlMzJjMzMiLCJuYW1lIjoidGVzdDEiLCJpYXQiOjE2NzYxNTcwMzMsImV4cCI6MTY3NjI0MzQzM30.K77WPkZGPVusCx40ZIt8yEwRHtp7xahJm2XMTubpQtY",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "id_event",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "trade_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-02-17T01:17:24.748Z",
+	"_postman_exported_using": "Postman/10.10.5"
+}
