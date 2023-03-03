@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "b36f28d2-a27d-46b1-bd67-a01cd2d2f849",
-		"name": "GetterApp",
+		"_postman_id": "09e4b9fa-2389-467f-81f6-368efb6280f3",
+		"name": "RatherLabsHttp Pre ws",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "12802855"
 	},
@@ -21,11 +21,21 @@
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"test1\",\r\n    \"password\": \"test123*\"\r\n}",
+					"raw": "{\r\n    \"username\": \"test2\",\r\n    \"password\": \"test123*\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -87,15 +97,13 @@
 			"response": []
 		},
 		{
-			"name": "/api/tasks",
+			"name": "/api/market/trade",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"tests[\"Status code is 201\"] = responseCode.code === 201;\r",
-							"var data = JSON.parse(responseBody);\r",
-							"pm.environment.set('taskid', data.data.id);"
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
 						],
 						"type": "text/javascript"
 					}
@@ -116,7 +124,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Title 1\",\r\n    \"alarm\": false,\r\n    \"completed\": false\r\n}",
+					"raw": "{\r\n    \"amount\": 6000,\r\n    \"symbol\": \"ADAUSD\",\r\n    \"operation\": \"sell\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -124,59 +132,20 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrlLocal}}/tasks",
+					"raw": "{{baseUrlLocal}}/market/trade",
 					"host": [
 						"{{baseUrlLocal}}"
 					],
 					"path": [
-						"tasks"
+						"market",
+						"trade"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "/api/tasks/:id",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrlLocal}}/tasks/{{taskid}}",
-					"host": [
-						"{{baseUrlLocal}}"
-					],
-					"path": [
-						"tasks",
-						"{{taskid}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/tasks",
+			"name": "/api/test_view",
 			"event": [
 				{
 					"listen": "test",
@@ -202,139 +171,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrlLocal}}/tasks",
+					"raw": "{{baseUrlLocal}}/test_view",
 					"host": [
 						"{{baseUrlLocal}}"
 					],
 					"path": [
-						"tasks"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/tasks",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
-							"var data = JSON.parse(responseBody);\r",
-							"pm.environment.set('trade_id', data.data._id);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Title 1 updated\",\r\n    \"alarm\": false,\r\n    \"completed\": true\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrlLocal}}/tasks/{{taskid}}",
-					"host": [
-						"{{baseUrlLocal}}"
-					],
-					"path": [
-						"tasks",
-						"{{taskid}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/tasks PostEdit",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrlLocal}}/tasks",
-					"host": [
-						"{{baseUrlLocal}}"
-					],
-					"path": [
-						"tasks"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/auth/signout",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrlLocal}}/auth/signout",
-					"host": [
-						"{{baseUrlLocal}}"
-					],
-					"path": [
-						"auth",
-						"signout"
+						"test_view"
 					]
 				}
 			},
