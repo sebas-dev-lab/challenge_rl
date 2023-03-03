@@ -199,7 +199,7 @@
 
 ## Nota Final
 
-- En lugar de utilizar testing uitario con Jest o Mocha - Chai, decidí implementar otras herramientas de testing y documentación que permiten controlar luego un proceso de CI/CD de forma automatica. 
+- En lugar de utilizar testing uitario con Jest o Mocha - Chai, decidí implementar otras herramientas de testing y documentación que también permiten controlar luego un proceso de CI/CD de forma automatica. 
 
 
 ## ANEXO
