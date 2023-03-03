@@ -1,7 +1,7 @@
 import { credentials, authUsers, loginType } from '../../core/auth/credentials.auth';
 import { AuthCasesInterface } from '../../Infraestrucure/server/interfaces/routes.interfaces';
 import { v4 as uuidv4 } from 'uuid';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { contextAuth } from '../../core/auth/context.auth';
 import jwt, { Secret } from 'jsonwebtoken';
 import { authCase } from '../../Infraestrucure/server/envs/envs';

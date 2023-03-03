@@ -107,7 +107,7 @@
     "./node_modules/@types",
     "./src/common/context/index.d.ts"
   ],
-  "include": ["src", "@types", "specs/**/*",  "**/*.spec.ts"],
+  "include": ["src", "@types", "specs/**/*",  "**/*.spec.ts", "**/test_newman/**/*.json", "**/*.env"],
   "exclude": ["node_modules", "**/*.spec.ts"],
   "lib": ["es2015"]
 }
