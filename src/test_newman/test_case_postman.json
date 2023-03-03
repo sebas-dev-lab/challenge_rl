@@ -1,186 +1,39 @@
 {
-	"info": {
-		"_postman_id": "09e4b9fa-2389-467f-81f6-368efb6280f3",
-		"name": "RatherLabsHttp Pre ws",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "12802855"
-	},
-	"item": [
+	"id": "7d60664b-0719-481e-aa8f-fa65c9b92623",
+	"name": "ratherlabs",
+	"values": [
 		{
-			"name": "/api/auth/register",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"tests[\"Status code is 201\"] = responseCode.code === 201;\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"test2\",\r\n    \"password\": \"test123*\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrlLocal}}/auth/register",
-					"host": [
-						"{{baseUrlLocal}}"
-					],
-					"path": [
-						"auth",
-						"register"
-					]
-				}
-			},
-			"response": []
+			"key": "baseUrlLocal",
+			"value": "http://localhost:4000/api",
+			"type": "default",
+			"enabled": true
 		},
 		{
-			"name": "/api/auth/signin",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
-							"var data = JSON.parse(responseBody);\r",
-							"pm.environment.set('token', data.data.token);\r",
-							"pm.environment.set('id_event', data.data.id_event);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"test1\",\r\n    \"password\": \"test123*\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrlLocal}}/auth/signin",
-					"host": [
-						"{{baseUrlLocal}}"
-					],
-					"path": [
-						"auth",
-						"signin"
-					]
-				}
-			},
-			"response": []
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIzMDAxNDM5OS1jY2FhLTQxMGQtYjkzYi0yNjJlNWRlMzJjMzMiLCJuYW1lIjoidGVzdDEiLCJpYXQiOjE2NzYxNTcwMzMsImV4cCI6MTY3NjI0MzQzM30.K77WPkZGPVusCx40ZIt8yEwRHtp7xahJm2XMTubpQtY",
+			"type": "any",
+			"enabled": true
 		},
 		{
-			"name": "/api/market/trade",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"amount\": 6000,\r\n    \"symbol\": \"ADAUSD\",\r\n    \"operation\": \"sell\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrlLocal}}/market/trade",
-					"host": [
-						"{{baseUrlLocal}}"
-					],
-					"path": [
-						"market",
-						"trade"
-					]
-				}
-			},
-			"response": []
+			"key": "id_event",
+			"value": "",
+			"type": "any",
+			"enabled": true
 		},
 		{
-			"name": "/api/test_view",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrlLocal}}/test_view",
-					"host": [
-						"{{baseUrlLocal}}"
-					],
-					"path": [
-						"test_view"
-					]
-				}
-			},
-			"response": []
+			"key": "trade_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "taskid",
+			"value": "",
+			"type": "any",
+			"enabled": true
 		}
-	]
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-03-03T05:49:07.624Z",
+	"_postman_exported_using": "Postman/10.11.1"
 }
