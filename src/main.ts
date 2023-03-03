@@ -24,4 +24,4 @@ connection.init();
  *  You must see console test and you can see html report on test_newman/reports.html
  *  or go to http://localhost:<port>/api/test_view
  */
-//run_test;
+run_test;
